@@ -1,0 +1,372 @@
+body { background-color: white; }
+.web-container { width: 960px; margin: 0 auto; }
+
+/*----------Navigation Menu Code---------- */
+.navigation img { 
+    position: relative;
+    width: 19%;
+    margin: 0 0 0 115px;
+    float: left;
+    top: 0;
+    transition: top 0.4s cubic-bezier(.65, .19, .5, .79);
+}
+.navigation img:hover {top: 15px;}
+
+.navigation{ background-color: #09C416; }
+.navigation ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+.navigation li{ float: left; }
+.navigation li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 20px;
+    font-family: Josefin Sans;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+.navigation li a:hover{ background-color: #78DEB5; }
+.navigation li a:active{ background-color: #78DEB5; }
+
+/* index.html */
+/*----------Main Cover Page----------*/
+.cover {
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    height: 995px;
+}
+
+.cover a:hover{top:40px;}
+
+.text-block {
+    padding-top: 200px;
+    text-align: center;
+    font-family: Josefin Sans, sans-serifl;
+}
+
+.text-block h1{
+    padding: 100px 0 0 0;
+    color: purple;
+    font-weight: bold;
+    font-size: 90px;
+}
+.text-block h2{
+    padding: 50px 0;
+    color: purple;
+    font-weight: 400;
+    font-size: 50px;
+}
+.choose-btn a{
+    text-decoration: none;
+    font-size: 30px;
+    background-color: #5d8dff;
+    color: white;
+    padding: 20px;
+    transition: font-size 0.1s cubic-bezier(.43, .13, .78, .07);
+    border: 4px solid purple;
+}
+.text-block a:hover{font-size: 33px;}
+
+/* character.html */
+/* ----------Characters Page Code---------- */
+.characters {
+    background-image: url(../images/bg-character.jpg);
+    text-align: center;
+    padding: 140px 0 0 0;
+    background-repeat: no-repeat;
+    color: white;
+    height: 800px;
+}
+.characters h1{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgb(115, 157, 5);
+    padding: 15px;
+    font-size: 70px;
+    font-weight: 900;
+}
+.characters h2{
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 40px;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+
+/*---------The Character Selection Section---------*/
+.arrow {padding: 10px; }
+.characters h3{
+    font-family: 'Architects Daughter', cursive;
+    color: white;
+    padding: 10px;
+    font-size: 35px;
+    font-weight: 500;
+}
+.characters-box{
+    width: 960px;
+    height: 400px;
+    padding: 10px;
+}
+.characters a{ color: white; text-decoration: none; }
+.bards-btn {width: 315px; float:left; }
+.druids-btn {width: 315px; float:left; }
+.ovates-btn {width: 315px; float:left; }
+
+/*-----Two Columns Layout, the power meter and back to top-----*/
+.left { width: 470px; float: left; }
+.right { width: 470px; float: right;}
+.power-bards {width: 40%; float: right; }
+.power-druids {width: 40%; float: right; }
+.power-ovates {width: 40%; float: right; }
+.back-top a{text-decoration: none; color: gray;}
+.back-top {
+    font-family: Tahoma, sans-serif; 
+    font-size: 18px; 
+    padding: 9px;
+    background-color: white;
+    color: gray;
+    text-align: center;
+}
+
+/*----------Characters section----------*/
+/*--BARDS--*/
+#bards {
+    padding: 10px;
+    text-align: center;
+    background-color: #ffea81;
+    height: 630px;
+}
+#bards img{ width: 65%; padding: 20px; }
+#bards h1{
+    font-family: PatrickHand, cursive;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 55px;
+}
+#bards h4 { 
+    font-size: 24px;
+    font-family: PatrickHand, cursive;
+    background-color: #DECC70;
+    padding: 10px;
+    color: white;
+    border-bottom: 1px #FFEA81 solid;
+}
+#bards p{
+    margin-top: 50px;
+    font-family: Tahoma,sans-serif;
+    font-size: 16px;
+    line-height: 23px;
+    padding: 30px;
+    background-color: #EBD777;
+}
+#bards ul { background-color: #EBD777; }
+#bards li {
+    background-color: #DECC70;
+    font-size: 16px;
+    font-family: PatrickHand, cursive;
+    font-weight: 400;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    padding: 12px 50px 12px 50px;
+}
+
+/*---DRUIDS--*/
+#druids {
+    padding: 10px;
+    text-align: center;
+    background-color: #21d1ce;
+    height: 630px;
+}
+#druids img{ width: 70%; padding: 20px; }
+#druids h1{
+    margin-top: 55px;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 66px;
+    line-height: 38px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+#druids h4 { 
+    font-size: 24px;
+    font-family: 'Architects Daughter', cursive;
+    background-color: #1DB7B5;
+    padding: 10px;
+    color: white;
+    border-bottom: 1px #0D5150 solid;
+}
+#druids p{
+    margin-top: 150px;
+    font-family: Tahoma,sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 30px;
+    background-color: #23DEDB;
+    color: white;
+}
+#druids ul { background-color: #21D1CE; }
+#druids li {
+    background-color: #1DB7B5;
+    font-size: 16px;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 400;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    padding: 12px 50px 12px 50px;
+}
+
+/*--OVATES--*/
+#ovates {
+    padding: 10px;
+    text-align: center;
+    background-color: #0ab70e;
+    height: 630px;
+}
+#ovates img{ width: 70%; padding: 20px; }
+#ovates h1{
+    margin-top: 55px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 66px;
+    line-height: 38px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+#ovates h4 { 
+    font-size: 24px;
+    font-family: 'Indie Flower', cursive;
+    background-color: #08910b;
+    padding: 10px;
+    color: white;
+    border-bottom: 1px #045106 solid;
+}
+#ovates p{
+    margin-top: 150px;
+    font-family: Tahoma,sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 30px;
+    background-color: #0cde11;
+    color: white;
+}
+#ovates ul { background-color: #08910b; }
+#ovates li {
+    background-color: #08910b;
+    font-size: 16px;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 400;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    padding: 12px 50px 12px 50px;
+}
+
+/* about.html */
+/*------ABOOUT PAGE------*/
+.about {
+    background-image: url(../images/bg-about.jpg);
+    background-repeat: no-repeat;
+    height: 995px;
+}
+.about-text h1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 70px;
+    padding: 100px 10px 30px 10px;
+    color: white;
+}
+.about-text {
+    padding: 30px;
+    background-color: #a8e867;
+    color: gray;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+}
+/* Google Maps */
+.google-map { padding: 90px; }
+#map {
+    width: 700px;
+    height: 380px;
+    margin: 0 auto;
+    border: 5px solid white;
+}
+
+/*-------Gallery Page-----*/
+.gallery {
+    background-color: #997e3f; 
+    height: 995px; 
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    text-align: center;
+}
+.gallery-title {
+    font-size: 70px;
+    padding: 120px 10px 30px 10px;
+    background-color: #7f6934;
+}
+.gallery-nav ul li a {
+	display: inline-block;
+	text-align: center;
+    float: left;
+    left: 38%;
+	height: 10px;
+	background: #594925;
+	padding: 10px;
+	position: relative;
+	margin: 0 5px 0 0; 
+	font-size: 19px;
+	text-decoration: none;
+	color: #fff;
+}
+.gallery-box h1{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 30px;
+    padding: 30px;
+}
+.gallery-box {
+    background-color: #e5bd5e;
+    margin: 0 50px 0 50px;
+    padding: 0 auto;
+    height: 780px;
+}
+.gallery-box img{
+    padding: 10px; 
+    margin: 10px; 
+    width: 25%; 
+    border: 3px solid white
+}
+
+/*---Contact Page---*/
+.contact {
+    background-color: #6dcc4d;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    
+}
+.contact-form h1{
+    font-size: 70px;ß;
+    text-align: center;
+    padding: 110px 10px 30px 10px;
+    line-height: 90px;
+}
+.jotform {border: 1px solid white;}
+.contact-form {color: white;}
+/* Just the footer */
+.footer {
+    background-color: #2756c6;
+    color: white;
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px;
+    clear: both;
+}
