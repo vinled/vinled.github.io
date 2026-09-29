@@ -1,0 +1,7 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Test artifacts and temporary profiles
+tests/*.png
+tests/*-profile/

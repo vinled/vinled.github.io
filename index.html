@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vinicius Ledesma — Creative Technologist & AI Prototyper</title>
+  <meta name="description" content="Portfólio de Vinicius Ledesma — Creative Technologist & AI Prototyper. Especialista na intersecção entre intuição de produto, Three.js, WebGL, Vibecoding com Google AI Studio e design de interface moderno.">
+  <meta name="author" content="Vinicius Ledesma">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vinicius Ledesma — Creative Technologist & AI Prototyper">
+  <meta property="og:description" content="Transformando intuição de produto e modelos de inteligência artificial em experiências digitais funcionais, elegantes e de alto impacto.">
+  <meta property="og:image" content="assets/windy-preview.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Typography: Plus Jakarta Sans for crisp Apple/Material 3 feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Dynamic Ambient Parallax Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Organic Background Glow Orbs -->
+  <div class="ambient-glow-orb orb-1" aria-hidden="true"></div>
+  <div class="ambient-glow-orb orb-2" aria-hidden="true"></div>
+  <div class="ambient-glow-orb orb-3" aria-hidden="true"></div>
+  <div class="bg-noise-overlay" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       1. Top Floating Navigation Dock (Apple Island & Material 3 Bar)
+       ========================================================================= -->
+  <header class="nav-island-wrapper" role="banner">
+    <nav class="nav-island" aria-label="Navegação Principal">
+      <a href="#main-content" class="nav-brand" title="Vinicius Ledesma — Início">
+        <div class="nav-monogram">VL</div>
+        <span class="nav-brand-text">Vinicius Ledesma</span>
+      </a>
+
+      <div class="nav-divider" aria-hidden="true"></div>
+
+      <ul class="nav-links">
+        <li><a href="#projetos" class="nav-link">Projetos</a></li>
+        <li><a href="#filosofia" class="nav-link">Metodologia</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+
+      <a href="https://wa.me/5513991340510" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">
+        <span>Falar Direto</span>
+        <span aria-hidden="true">💬</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       2. Main Content Container
+       ========================================================================= -->
+  <main class="main-wrapper" id="main-content">
+
+    <!-- -----------------------------------------------------------------------
+         Hero Section
+         ----------------------------------------------------------------------- -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      
+      <!-- Live Status Pill Badge -->
+      <div class="hero-status-badge">
+        <span class="status-dot-pulse" aria-hidden="true"></span>
+        <span>Disponível para projetos remotos (Global & Brasil)</span>
+      </div>
+
+      <p class="hero-name">Vinicius Ledesma</p>
+
+      <h1 class="hero-title" id="hero-heading">
+        Creative Technologist & <span class="highlight-gradient">AI Prototyper</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Construindo a ponte entre <strong>intuição de produto</strong>, <strong>inteligência artificial generativa</strong> e <strong>interfaces táteis de alto padrão</strong>. Criador de aplicações interativas em 3D e webapps rápidos com vibecoding.
+      </p>
+
+      <!-- Action Buttons Group -->
+      <div class="hero-actions-group">
+        <a href="#projetos" class="btn-primary">
+          <span>Explorar Projetos em Destaque</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+
+        <button type="button" class="btn-glass" data-copy="viniciusjrl@me.com" data-toast="E-mail copiado: viniciusjrl@me.com">
+          <span aria-hidden="true">📋</span>
+          <span>Copiar E-mail</span>
+        </button>
+
+        <a href="https://wa.me/5513991340510" target="_blank" rel="noopener noreferrer" class="btn-glass">
+          <span aria-hidden="true">⚡</span>
+          <span>WhatsApp Direto</span>
+        </a>
+      </div>
+
+      <!-- Quick Metrics Grid (Apple / Material 3 Cards) -->
+      <div class="hero-metrics-grid">
+        <div class="metric-card">
+          <div class="metric-number">8<span class="accent">+</span> Anos</div>
+          <div class="metric-label">Criação Visual & Design</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">100<span class="accent">%</span></div>
+          <div class="metric-label">Foco Remoto & Ágil</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">C1 <span class="accent">Fluente</span></div>
+          <div class="metric-label">Inglês Profissional Avançado</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">0 <span class="accent">Atrito</span></div>
+          <div class="metric-label">Do Insight ao Deploy Real</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Featured Projects Showcase (3D Parallax Tilt Cards)
+         ----------------------------------------------------------------------- -->
+    <section class="projects-section" id="projetos" aria-labelledby="projects-heading">
+      <div class="section-header">
+        <div class="section-pill-tag">Portfólio Selecionado</div>
+        <h2 class="section-title" id="projects-heading">
+          Projetos em <span class="text-gradient">Destaque</span>
+        </h2>
+        <p class="section-description">
+          Aplicações web públicas, funcionais e interativas demonstrando domínio técnico em WebGL, inteligência artificial e refinamento de interface.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- ==================== PROJECT 01: WINDY 3D ==================== -->
+        <article class="project-card reveal-on-scroll" data-tilt="true" style="--card-glow-color: rgba(56, 189, 248, 0.35);">
+          <div class="card-glare" aria-hidden="true"></div>
+
+          <!-- Project Details -->
+          <div class="project-info">
+            <div class="project-badge-row">
+              <span class="project-status-pill pill-live">
+                <span class="status-dot-pulse" style="width: 6px; height: 6px;" aria-hidden="true"></span>
+                Em Produção (Live)
+              </span>
+              <span class="project-index">PROJETO 01 / 02</span>
+            </div>
+
+            <h3 class="project-title">Windy 3D</h3>
+            <p class="project-headline">Visualizador Climático Interativo & Rios Voadores</p>
+
+            <p class="project-summary">
+              Reinventando a meteorologia digital em uma experiência tridimensional imersiva diretamente no navegador. Dados climáticos globais dos modelos ECMWF e GFS traduzidos em fluxos dinâmicos de vento, relevo, radar de precipitação e acompanhamento térmico.
+            </p>
+
+            <!-- Key Features -->
+            <ul class="project-features-list">
+              <li>
+                <span class="feature-bullet-icon" aria-hidden="true">✦</span>
+                <span>Globo 3D interativo em WebGL com iluminação solar orbital em tempo real.</span>
+              </li>
+              <li>
+                <span class="feature-bullet-icon" aria-hidden="true">✦</span>
+                <span>Camada dos <strong>Rios Voadores da Amazônia</strong> e fluxo volumétrico de nuvens.</span>
+              </li>
+              <li>
+                <span class="feature-bullet-icon" aria-hidden="true">✦</span>
+                <span>Busca preditiva de cidades brasileiras com curva de temperatura (sparkline 24h).</span>
+              </li>
+              <li>
+                <span class="feature-bullet-icon" aria-hidden="true">✦</span>
+                <span>Controle de linha do tempo meteorológica e alternância entre ECMWF e GFS.</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="project-tech-tags">
+              <span class="tech-chip">Three.js</span>
+              <span class="tech-chip">WebGL</span>
+              <span class="tech-chip">JavaScript Modular</span>
+              <span class="tech-chip">CSS Glassmorphism</span>
+              <span class="tech-chip">ECMWF / GFS Models</span>
+              <span class="tech-chip">Vercel Deploy</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="project-actions">
+              <a href="https://weather3d-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-action-primary">
+                <span>Abrir App no Ar</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <button type="button" class="btn-action-secondary" data-open-case="windy-3d" aria-haspopup="dialog" aria-controls="case-modal-backdrop">
+                <span aria-hidden="true">📖</span>
+                <span>Ver Estudo de Caso Completo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Interactive Vector Preview Frame -->
+          <div class="project-preview-wrap" data-open-case="windy-3d" role="button" tabindex="0" title="Clique para abrir o Estudo de Caso do Windy 3D" aria-label="Abrir Estudo de Caso do Windy 3D" aria-haspopup="dialog" aria-controls="case-modal-backdrop">
+            <img src="assets/windy-preview.svg" alt="Preview da interface do Windy 3D com globo espacial, camadas de vento e sparklines" width="800" height="500" loading="lazy">
+            <div class="preview-badge-overlay">
+              <span>🌪️ Three.js WebGL</span>
+              <span>•</span>
+              <span style="color: #38bdf8;">Ver Estudo ↗</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== PROJECT 02: POST NA MÃO ==================== -->
+        <article class="project-card reveal-on-scroll" data-tilt="true" style="--card-glow-color: rgba(168, 85, 247, 0.35);">
+          <div class="card-glare" aria-hidden="true"></div>
+
+          <!-- Project Details -->
+          <div class="project-info">
+            <div class="project-badge-row">
+              <span class="project-status-pill pill-prototype">
+                <span class="status-dot-pulse" style="width: 6px; height: 6px; background-color: var(--accent-pink);" aria-hidden="true"></span>
+                Protótipo Funcional
+              </span>
+              <span class="project-index">PROJETO 02 / 02</span>
+            </div>
+
+            <h3 class="project-title">Post Na Mão</h3>
+            <p class="project-headline">Webapp Imobiliário com IA & Vibecoding</p>
+
+            <p class="project-summary">
+              Exterminando a <em>"síndrome do panfleto de supermercado"</em> no mercado imobiliário. Uma ferramenta ágil para corretores gerarem peças gráficas refinadas e descrições otimizadas para o Instagram com inteligência artificial diretamente do celular.
+            </p>
+
+            <!-- Key Features -->
+            <ul class="project-features-list">
+              <li>
+                <span class="feature-bullet-icon" aria-hidden="true">✦</span>
+                <span>Geração e diagramação em tempo real: o corretor digita e a arte surge na hora.</span>
+              </li>
+              <li>
+                <span class="feature-bullet-icon" aria-hidden="true">✦</span>
+                <span>5 templates de design editorial de luxo pré-configurados sem atrito visual.</span>
+              </li>
+              <li>
+                <span class="feature-bullet-icon" aria-hidden="true">✦</span>
+                <span>Gerador de copy inteligente com IA generativa para legendas do Instagram.</span>
+              </li>
+              <li>
+                <span class="feature-bullet-icon" aria-hidden="true">✦</span>
+                <span>Prototipado em tempo recorde via <strong>Google AI Studio (Vibecoding)</strong>.</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="project-tech-tags">
+              <span class="tech-chip">Google AI Studio</span>
+              <span class="tech-chip">Engenharia de Prompts</span>
+              <span class="tech-chip">LLMs Generativos</span>
+              <span class="tech-chip">Vibecoding</span>
+              <span class="tech-chip">UI / UX Design</span>
+              <span class="tech-chip">Mobile-First</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="project-actions">
+              <a href="http://postnamao.com.br" target="_blank" rel="noopener noreferrer" class="btn-action-primary">
+                <span>Visitar Projeto</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <button type="button" class="btn-action-secondary" data-open-case="post-na-mao" aria-haspopup="dialog" aria-controls="case-modal-backdrop">
+                <span aria-hidden="true">📖</span>
+                <span>Ver Estudo de Caso Completo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Interactive Vector Preview Frame -->
+          <div class="project-preview-wrap" data-open-case="post-na-mao" role="button" tabindex="0" title="Clique para abrir o Estudo de Caso do Post Na Mão" aria-label="Abrir Estudo de Caso do Post Na Mão" aria-haspopup="dialog" aria-controls="case-modal-backdrop">
+            <img src="assets/postnamao-preview.svg" alt="Preview da interface do Post Na Mão com inputs rápidos, gerador de copy e post imobiliário de luxo" width="800" height="500" loading="lazy">
+            <div class="preview-badge-overlay">
+              <span>📱 Google AI Studio</span>
+              <span>•</span>
+              <span style="color: #c084fc;">Ver Estudo ↗</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Creative Technologist Philosophy Bento Grid (Material 3 + Apple)
+         ----------------------------------------------------------------------- -->
+    <section class="bento-section reveal-on-scroll" id="filosofia" aria-labelledby="philosophy-heading">
+      <div class="section-header">
+        <div class="section-pill-tag">Engenharia & Filosofia</div>
+        <h2 class="section-title" id="philosophy-heading">
+          Como eu Penso & <span class="text-gradient">Construo</span>
+        </h2>
+        <p class="section-description">
+          A fusão entre senso estético refinado, prototipação acelerada por IA e arquitetura web orientada à experiência final.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+
+        <!-- Bento Card 1: Vibecoding & IA -->
+        <div class="bento-card bento-card-7 reveal-on-scroll">
+          <div class="bento-icon-badge" aria-hidden="true">⚡</div>
+          <h3 class="bento-title">Vibecoding & Prototipação Ágil com IA</h3>
+          <p class="bento-desc">
+            Em vez de gastar semanas em reuniões e documentações estáticas, utilizo o Google AI Studio, Gemini e Claude para transformar intuição de produto em aplicações reais em horas. A inteligência artificial é a alavanca que acelera a prototipação sem sacrificar rigor de usabilidade.
+          </p>
+          <div class="bento-tags">
+            <span class="tech-chip">Google AI Studio</span>
+            <span class="tech-chip">Engenharia de Prompts</span>
+            <span class="tech-chip">LLMs Locais (LM Studio)</span>
+            <span class="tech-chip">Iteração Rápida</span>
+          </div>
+        </div>
+
+        <!-- Bento Card 2: 3D & Front-End -->
+        <div class="bento-card bento-card-5 reveal-on-scroll">
+          <div class="bento-icon-badge" aria-hidden="true">🌐</div>
+          <h3 class="bento-title">Front-End Interativo & 3D WebGL</h3>
+          <p class="bento-desc">
+            Construção de experiências espaciais com Three.js e shaders WebGL. Código modular, leve e responsivo garantindo 60 quadros por segundo tanto no Safari iOS quanto em desktops de alta resolução.
+          </p>
+          <div class="bento-tags">
+            <span class="tech-chip">Three.js</span>
+            <span class="tech-chip">WebGL Shaders</span>
+            <span class="tech-chip">JavaScript Vanilla</span>
+            <span class="tech-chip">Performance 60fps</span>
+          </div>
+        </div>
+
+        <!-- Bento Card 3: Craft Visual Apple + Material 3 -->
+        <div class="bento-card bento-card-5 reveal-on-scroll">
+          <div class="bento-icon-badge" aria-hidden="true">🎨</div>
+          <h3 class="bento-title">Craft Visual & Ergonomia Tátil</h3>
+          <p class="bento-desc">
+            Bagagem sólida de mais de 8 anos em criação visual, tratamento fotográfico (Photoshop, Lightroom) e design de interfaces no Figma. Equilíbrio preciso entre o minimalismo de vidro da Apple e os containers dinâmicos do Material 3.
+          </p>
+          <div class="bento-tags">
+            <span class="tech-chip">Glassmorphism</span>
+            <span class="tech-chip">Material You / M3</span>
+            <span class="tech-chip">Figma</span>
+            <span class="tech-chip">Micro-interações</span>
+          </div>
+        </div>
+
+        <!-- Bento Card 4: Autonomia Remota -->
+        <div class="bento-card bento-card-7 reveal-on-scroll">
+          <div class="bento-icon-badge" aria-hidden="true">🚀</div>
+          <h3 class="bento-title">Autonomia Remota & Resolução de Problemas</h3>
+          <p class="bento-desc">
+            Perfil orientado à entrega assíncrona. Capacidade autodidata de aprender qualquer stack necessária, diagnosticar gargalos técnicos e colocar produtos no ar com CI/CD contínuo na Vercel e GitHub. Comunicação transparente em português e inglês fluente.
+          </p>
+          <div class="bento-tags">
+            <span class="tech-chip">Trabalho 100% Remoto</span>
+            <span class="tech-chip">Inglês Avançado (C1)</span>
+            <span class="tech-chip">CI/CD & Vercel</span>
+            <span class="tech-chip">Pensamento Crítico</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Profile / About Section
+         ----------------------------------------------------------------------- -->
+    <section class="profile-section reveal-on-scroll" id="sobre" aria-labelledby="profile-heading">
+      <div class="profile-card">
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar" aria-hidden="true">👨🏻‍💻</div>
+        </div>
+
+        <div class="profile-content">
+          <span class="profile-role-pill">Creative Technologist & AI Prototyper</span>
+          <h2 class="profile-title" id="profile-heading">Vinicius Ledesma</h2>
+          
+          <p class="profile-bio">
+            Atuo na fronteira exata entre <strong>design visual de alto nível</strong>, <strong>engenharia de front-end</strong> e <strong>inteligência artificial generativa</strong>. Com base em Santos/SP e operando de forma 100% remota para o Brasil e exterior, dedico minha energia à construção de produtos digitais que não apenas funcionam com precisão técnica, mas proporcionam uma sensação memorável de elegância e fluidez.
+          </p>
+
+          <div class="profile-meta-row">
+            <div class="profile-meta-item">
+              <span aria-hidden="true">📍</span>
+              <span>Santos, SP — Brasil (100% Remoto)</span>
+            </div>
+            <div class="profile-meta-item">
+              <span aria-hidden="true">🗣️</span>
+              <span>Português (Nativo) | Inglês (C1 Avançado)</span>
+            </div>
+            <div class="profile-meta-item">
+              <span aria-hidden="true">⚡</span>
+              <span>Disponibilidade imediata para novos desafios</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Contact & Direct Call to Action Section
+         ----------------------------------------------------------------------- -->
+    <section class="contact-section reveal-on-scroll" id="contato" aria-labelledby="contact-heading">
+      <div class="contact-card">
+        <div class="section-pill-tag">Vamos Conversar?</div>
+        <h2 class="contact-headline" id="contact-heading">
+          Pronto para dar vida à sua próxima ideia?
+        </h2>
+        <p class="contact-desc">
+          Seja para criar um protótipo com IA generativa, desenvolver uma interface 3D imersiva ou integrar uma equipe ágil global, estou à disposição.
+        </p>
+
+        <div class="contact-actions-row">
+          <button type="button" class="btn-contact-email" data-copy="viniciusjrl@me.com" data-toast="E-mail copiado: viniciusjrl@me.com">
+            <span aria-hidden="true">✉️</span>
+            <span>Copiar viniciusjrl@me.com</span>
+          </button>
+
+          <a href="https://wa.me/5513991340510" target="_blank" rel="noopener noreferrer" class="btn-contact-whatsapp">
+            <span aria-hidden="true">💬</span>
+            <span>Chamar no WhatsApp (13) 99134-0510</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Site Footer -->
+      <footer class="site-footer">
+        <div>
+          <span>© 2026 Vinicius Ledesma. Todos os direitos reservados.</span>
+        </div>
+        <div>
+          <span>Projetado com estética Apple HIG + Google Material 3 • Zero dependências</span>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       3. Apple-Style Case Study Sheet / Modal (Spring Physics)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="case-modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-sheet" id="case-modal-sheet">
+      
+      <!-- iOS Drag Handle for touch dismissal -->
+      <div class="sheet-drag-handle" aria-hidden="true"></div>
+
+      <!-- Header Bar -->
+      <header class="modal-header">
+        <div class="modal-header-meta">
+          <div class="nav-monogram" style="width: 28px; height: 28px; font-size: 0.75rem;">VL</div>
+          <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-secondary);">Estudo de Caso Detalhado</span>
+        </div>
+        <button type="button" class="modal-close-btn" id="btn-close-modal" aria-label="Fechar estudo de caso (Esc)">
+          ✕
+        </button>
+      </header>
+
+      <!-- Dynamic Content Injection Container -->
+      <div class="modal-body" id="case-modal-content">
+        <!-- Rendered by main.js -->
+      </div>
+
+      <!-- Sticky Bottom Action Footer -->
+      <footer class="modal-footer">
+        <button type="button" class="btn-glass" data-close-modal="true">
+          Fechar Janela
+        </button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" id="modal-live-link">
+          <span>Abrir Projeto no Ar</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       4. Apple-Style Haptic Toast Notification
+       ========================================================================= -->
+  <aside class="toast-notification" id="toast-notification" role="status" aria-live="polite">
+    <span class="toast-icon" aria-hidden="true">✨</span>
+    <span id="toast-message">Mensagem copiada!</span>
+  </aside>
+
+  <!-- Main Interaction Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
