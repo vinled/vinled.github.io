@@ -1,5 +1,5 @@
 /**
- * VINICIUS LEDESMA — PORTFOLIO INTERACTION ENGINE
+ * VINICIUS LEDESMA — TECH NOIR & 21ST.DEV INTERACTION ENGINE
  * Creative Technologist & AI Prototyper
  * Pure Vanilla JS — Zero dependencies, 60fps, touch & keyboard accessible
  * Bilingual Support: Portuguese (Default) & English (Dynamic Toggle)
@@ -9,9 +9,9 @@
   'use strict';
 
   // =========================================================================
-  // 1. Language State & Full Bilingual Dictionary
+  // 1. Language State & Bilingual Dictionary
   // =========================================================================
-  let currentLang = 'pt'; // Portuguese by default as requested!
+  let currentLang = 'pt'; // Portuguese strictly by default on initial load!
   let currentOpenCaseId = null;
 
   const TRANSLATIONS = {
@@ -22,24 +22,25 @@
       nav_contact: 'Contato',
       nav_cta: 'Falar Direto',
       hero_status: 'Disponível para projetos remotos (Global & Brasil)',
-      hero_title: 'Creative Technologist & <span class="highlight-gradient">AI Prototyper</span>',
+      hero_eyebrow: 'PORTFÓLIO DE ENGENHARIA CRIATIVA & PRODUTO',
+      hero_title: 'Creative Technologist & <span class="highlight-serif">AI Prototyper</span>',
       hero_subtitle: 'Construindo a ponte entre <strong>intuição de produto</strong>, <strong>inteligência artificial generativa</strong> e <strong>interfaces táteis de alto padrão</strong>. Criador de aplicações interativas em 3D e webapps rápidos com vibecoding.',
       hero_cta_explore: 'Explorar Projetos em Destaque',
       hero_cta_email: 'Copiar E-mail',
       hero_cta_whatsapp: 'WhatsApp Direto',
-      metric_1_num: '8<span class="accent">+</span> Anos',
+      metric_1_num: '8<span class="accent-cyan">+</span> Anos',
       metric_1_lbl: 'Criação Visual & Design',
-      metric_2_num: '100<span class="accent">%</span>',
-      metric_2_lbl: 'Foco Remoto & Ágil',
-      metric_3_num: 'C1 <span class="accent">Fluente</span>',
-      metric_3_lbl: 'Inglês Profissional Avançado',
-      metric_4_num: '0 <span class="accent">Atrito</span>',
-      metric_4_lbl: 'Do Insight ao Deploy Real',
+      metric_2_num: 'Vibecoding',
+      metric_2_lbl: 'Google AI Studio & LLMs',
+      metric_3_num: '60 <span class="accent-cyan">FPS</span>',
+      metric_3_lbl: 'Three.js & WebGL Shaders',
+      metric_4_num: 'C1 <span class="accent-cyan">Fluente</span>',
+      metric_4_lbl: 'Inglês Profissional Avançado',
       projects_tag: 'Portfólio Selecionado',
-      projects_title: 'Projetos em <span class="text-gradient">Destaque</span>',
+      projects_title: 'Projetos em <span class="highlight-serif">Destaque</span>',
       projects_desc: 'Aplicações web públicas, funcionais e interativas demonstrando domínio técnico em WebGL, inteligência artificial e refinamento de interface.',
       p1_status: 'Em Produção (Live)',
-      p1_index: 'PROJETO 01 / 02',
+      p1_index: 'PROJETO 01 // 02',
       p1_headline: 'Visualizador Climático Interativo & Rios Voadores',
       p1_summary: 'Reinventando a meteorologia digital em uma experiência tridimensional imersiva diretamente no navegador. Dados climáticos globais dos modelos ECMWF e GFS traduzidos em fluxos dinâmicos de vento, relevo, radar de precipitação e acompanhamento térmico.',
       p1_f1: 'Globo 3D interativo em WebGL com iluminação solar orbital em tempo real.',
@@ -50,7 +51,7 @@
       p1_btn_case: 'Ver Estudo de Caso Completo',
       p1_badge_study: 'Ver Estudo ↗',
       p2_status: 'Protótipo Funcional',
-      p2_index: 'PROJETO 02 / 02',
+      p2_index: 'PROJETO 02 // 02',
       p2_headline: 'Webapp Imobiliário com IA & Vibecoding',
       p2_summary: 'Exterminando a <em>"síndrome do panfleto de supermercado"</em> no mercado imobiliário. Uma ferramenta ágil para corretores gerarem peças gráficas refinadas e descrições otimizadas para o Instagram com inteligência artificial diretamente do celular.',
       p2_f1: 'Geração e diagramação em tempo real: o corretor digita e a arte surge na hora.',
@@ -61,7 +62,7 @@
       p2_btn_case: 'Ver Estudo de Caso Completo',
       p2_badge_study: 'Ver Estudo ↗',
       bento_tag: 'Engenharia & Filosofia',
-      bento_title: 'Como eu Penso & <span class="text-gradient">Construo</span>',
+      bento_title: 'Como eu Penso & <span class="highlight-serif">Construo</span>',
       bento_desc: 'A fusão entre senso estético refinado, prototipação acelerada por IA e arquitetura web orientada à experiência final.',
       bento_1_title: 'Vibecoding & Prototipação Ágil com IA',
       bento_1_desc: 'Em vez de gastar semanas em reuniões e documentações estáticas, utilizo o Google AI Studio, Gemini e Claude para transformar intuição de produto em aplicações reais em horas. A inteligência artificial é a alavanca que acelera a prototipação sem sacrificar rigor de usabilidade.',
@@ -101,24 +102,25 @@
       nav_contact: 'Contact',
       nav_cta: 'Direct Talk',
       hero_status: 'Available for remote opportunities (Global & US/EU)',
-      hero_title: 'Creative Technologist & <span class="highlight-gradient">AI Prototyper</span>',
+      hero_eyebrow: 'CREATIVE ENGINEERING & PRODUCT PORTFOLIO',
+      hero_title: 'Creative Technologist & <span class="highlight-serif">AI Prototyper</span>',
       hero_subtitle: 'Bridging <strong>product intuition</strong>, <strong>generative AI</strong>, and <strong>high-end tactile interfaces</strong>. Creator of interactive 3D WebGL experiences and high-velocity vibecoded applications.',
       hero_cta_explore: 'Explore Featured Works',
       hero_cta_email: 'Copy E-mail',
       hero_cta_whatsapp: 'Direct WhatsApp',
-      metric_1_num: '8<span class="accent">+</span> Years',
+      metric_1_num: '8<span class="accent-cyan">+</span> Years',
       metric_1_lbl: 'Visual Design & Craft',
-      metric_2_num: '100<span class="accent">%</span>',
-      metric_2_lbl: 'Remote & Agile Focus',
-      metric_3_num: 'C1 <span class="accent">Fluent</span>',
-      metric_3_lbl: 'Professional English Fluency',
-      metric_4_num: 'Zero <span class="accent">Friction</span>',
-      metric_4_lbl: 'From Insight to Live Deploy',
+      metric_2_num: 'Vibecoding',
+      metric_2_lbl: 'Google AI Studio & LLMs',
+      metric_3_num: '60 <span class="accent-cyan">FPS</span>',
+      metric_3_lbl: 'Three.js & WebGL Shaders',
+      metric_4_num: 'C1 <span class="accent-cyan">Fluent</span>',
+      metric_4_lbl: 'Professional English Fluency',
       projects_tag: 'Curated Showcase',
-      projects_title: 'Featured <span class="text-gradient">Projects</span>',
+      projects_title: 'Featured <span class="highlight-serif">Projects</span>',
       projects_desc: 'Public, interactive, and production-ready web applications showcasing technical mastery in WebGL, generative AI, and interface craft.',
       p1_status: 'In Production (Live)',
-      p1_index: 'PROJECT 01 / 02',
+      p1_index: 'PROJECT 01 // 02',
       p1_headline: 'Interactive 3D Weather Visualizer & Flying Rivers',
       p1_summary: 'Reinventing digital meteorology into an immersive spatial experience directly in the browser. Global forecast models (ECMWF & GFS) rendered into dynamic wind streams, 3D terrain, volumetric precipitation, and thermal trends.',
       p1_f1: 'Interactive 3D WebGL globe with real-time orbital solar lighting.',
@@ -129,7 +131,7 @@
       p1_btn_case: 'Read Full Case Study',
       p1_badge_study: 'View Case ↗',
       p2_status: 'Functional Prototype',
-      p2_index: 'PROJECT 02 / 02',
+      p2_index: 'PROJECT 02 // 02',
       p2_headline: 'AI Real Estate Webapp & Vibecoding',
       p2_summary: 'Eliminating the <em>"supermarket flyer syndrome"</em> in real estate marketing. A lightning-fast mobile-first webapp empowering agents to generate editorial-grade Instagram graphics and AI-optimized captions in seconds.',
       p2_f1: 'Real-time generative canvas: agents type basic specs and clean editorial graphics render instantly.',
@@ -140,7 +142,7 @@
       p2_btn_case: 'Read Full Case Study',
       p2_badge_study: 'View Case ↗',
       bento_tag: 'Philosophy & Mindset',
-      bento_title: 'How I <span class="text-gradient">Think & Build</span>',
+      bento_title: 'How I <span class="highlight-serif">Think & Build</span>',
       bento_desc: 'Blending product intuition, AI-accelerated iteration velocity, and clean modern code without bloatware.',
       bento_1_title: 'High-Velocity Vibecoding with AI',
       bento_1_desc: 'Instead of spending weeks in meetings and static specs, I leverage Google AI Studio, Gemini, and Claude to translate product intuition into live software in hours. AI is the pragmatic lever that multiplies prototyping speed without sacrificing craft.',
@@ -297,23 +299,19 @@
             number: '03',
             title: 'A Solução: Design + IA em Tempo Real',
             content: `
-              <p class="case-paragraph">
-                O <strong>Post Na Mão</strong> é um webapp responsivo desenvolvido para funcionar com perfeição tanto na tela de um smartphone enquanto o corretor está no carro, quanto no desktop da imobiliária:
-              </p>
               <ul class="case-list">
-                <li><strong>Renderização Reativa em Tempo Real:</strong> Qualquer dado digitado (valor, quartos, metragem, bairro) é formatado e renderizado instantaneamente sobre a imagem com tipografia e espaçamento profissionais.</li>
-                <li><strong>5 Templates Minimalistas Embutidos:</strong> Modelos pré-calibrados com princípios de design editorial de luxo (sem necessidade de ajuste manual de réguas ou margens).</li>
-                <li><strong>Gerador de Copy com IA Generativa:</strong> Elimina o bloqueio criativo do profissional. A inteligência artificial consome as características do imóvel e redige uma legenda persuasiva e personalizada para o Instagram, já formatada com hashtags pertinentes.</li>
-                <li><strong>Fluxo de Postagem Fricção Zero:</strong> Exportação direta em alta definição para a biblioteca do aparelho ou compartilhamento imediato no app do Instagram.</li>
+                <li><strong>Canvas Generativo Instantâneo:</strong> Conforme o usuário preenche o nome do edifício, bairro, metragem e dormitórios, a interface renderiza a peça final em tempo real com tipografia equilibrada.</li>
+                <li><strong>Templates Editoriais com Grid de Luxo:</strong> Cinco variações visuais pré-calibradas baseadas no minimalismo editorial contemporâneo, evitando que qualquer post saia desalinhado.</li>
+                <li><strong>Redator Generativo de Legendas:</strong> Um modelo generativo integrado escreve o texto de copy perfeito para o Instagram com emojis comedidos, apelo persuasivo e hashtags estratégicas.</li>
               </ul>
             `
           },
           {
             number: '04',
-            title: 'Impacto & Resultados',
+            title: 'Impacto & Validação',
             content: `
               <p class="case-paragraph">
-                O <strong>Post Na Mão</strong> comprova a capacidade de mapear uma fricção real de negócio (B2B/B2C) e entregar um produto digital completo em tempo recorde utilizando IA generativa de forma prática, estratégica e pragmática.
+                O <strong>Post Na Mão</strong> exemplifica a essência do vibecoding: alavancar LLMs e ferramentas como o Google AI Studio para transformar ideias em software real com velocidade vertiginosa. O produto está ativo em <a href="http://postnamao.com.br" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">postnamao.com.br</a>.
               </p>
             `
           }
@@ -328,67 +326,67 @@
         title: 'Windy 3D — Interactive Spatial Weather Visualizer',
         headline: 'Reimagining digital meteorology into an immersive 3D spatial experience with real-time ECMWF & GFS forecast models.',
         meta: [
-          { label: 'Role', value: 'Creative Technologist & Front-End Prototyper' },
+          { label: 'Role', value: 'Creative Technologist' },
           { label: 'Stack', value: 'Three.js, WebGL, CSS Glass, Vercel' },
           { label: 'Status', value: 'Live in Production' },
-          { label: 'Models', value: 'ECMWF (9km) & GFS (22km)' }
+          { label: 'Models', value: 'ECMWF (9km) & GFS' }
         ],
         liveUrl: 'https://weather3d-nine.vercel.app/',
         liveButtonText: 'Launch Windy 3D Live',
         sections: [
           {
             number: '01',
-            title: 'The Challenge: Moving Beyond Static 2D Maps',
+            title: 'The Challenge: Moving Beyond Flat 2D Maps',
             content: `
               <p class="case-paragraph">
-                The vast majority of modern meteorological portals deliver atmospheric data in dry tabular formats or flat 2D maps that fail to convey the majestic scale and momentum of planetary airflow systems.
+                Most contemporary weather forecast services present planetary data through rigid tables or flat two-dimensional satellite tiles that fail to convey the true depth of global atmospheric systems.
               </p>
               <p class="case-paragraph">
-                The premise of <strong>Windy 3D</strong> was to conceptualize and engineer an immersive spatial experience directly inside the browser. The core objective was uniting the technical precision of industrial tools like <em>Windy.com</em> with the tactile refinement of Apple design philosophy (glassmorphic depth, crisp typography, and fluid spring physics).
+                The core premise of <strong>Windy 3D</strong> was to engineer an immersive, fluid, and hardware-accelerated spatial experience running natively in modern web browsers. The design challenge was to unite industrial data rigor (comparable to <em>Windy.com</em>) with high-craft interface elegance inspired by Apple design language.
               </p>
               <div class="case-callout">
                 <div class="case-callout-title">Engineering Hurdle</div>
                 <div class="case-callout-text">
-                  Rendering dynamic airflow particles, volumetric cloud layers, and spherical elevation relief in WebGL while sustaining a rock-solid 60 FPS across both desktop and mobile devices without frame drops.
+                  Rendering dynamic volumetric wind particles, interactive cloud corridors, and high-res spherical terrain with WebGL while locking a rock-solid 60 FPS across both mobile devices and Retina desktop displays.
                 </div>
               </div>
             `
           },
           {
             number: '02',
-            title: 'Interface Design (UI) & Spatial Experience (UX)',
+            title: 'Interface Design (UI) & Spatial User Experience (UX)',
             content: `
               <p class="case-paragraph">
-                To orchestrate complex meteorological layers without overwhelming the viewport, the architecture was segmented into two symbiotic planes: an <strong>immersive 3D planetary canvas</strong> and an <strong>Apple-style floating glassmorphic HUD</strong>:
+                To present multi-layered meteorological data without cognitive overload, the system employs a two-tier spatial layout:
               </p>
               <ul class="case-list">
-                <li><strong>Dynamic Multi-Layer Deck:</strong> Real-time switching between wind vectors, volumetric precipitation radars, live lightning discharges, surface heatmaps, cloud layers, and snowfall.</li>
-                <li><strong>Amazon Flying Rivers & Regional Geography:</strong> Dedicated visualization of the moisture corridors ("Rios Voadores") transporting vapor from the Amazon basin across South America, rendered with 3D territorial borders and city markers.</li>
-                <li><strong>Predictive City Search with Sparklines:</strong> Search input with real-time telemetry. Selecting a city instantly reveals atmospheric conditions alongside a 24-hour temperature trend sparkline graph.</li>
-                <li><strong>Interactive Timeline Scrubber:</strong> Playback controls allowing users to scrub forward (+6h, +12h, +24h, +48h, +72h) with seamless switching between global numerical models (ECMWF vs GFS).</li>
+                <li><strong>Interactive Dynamic Layer Stack:</strong> Instant zero-delay switching between wind velocity vectors, radar precipitation, real-time lightning strikes, sea surface temperatures, cloud cover, and snow depth.</li>
+                <li><strong>Brazilian Flying Rivers Corridor:</strong> A world-first visual layer illustrating the Amazonian "Flying Rivers" moisture corridor channeling humidity towards South and Southeast Brazil.</li>
+                <li><strong>Predictive City Search with Sparkline Curves:</strong> Autocomplete search revealing instantaneous temperature, humidity, pressure, and an interactive 24-hour thermal trend graph.</li>
+                <li><strong>Interactive Scrubber Timeline:</strong> Precision playback controls allowing forecast exploration (Now, +6h, +12h, +24h, +48h, +72h) with seamless model comparison between ECMWF and GFS.</li>
               </ul>
             `
           },
           {
             number: '03',
-            title: 'Creative Engineering & Technical Architecture',
+            title: 'Creative Engineering & Architecture',
             content: `
               <p class="case-paragraph">
-                Engineered with a lean, zero-bloat modular philosophy to achieve instant sub-second initial load:
+                Built with zero bloated dependencies for instant loading speed:
               </p>
               <ul class="case-list">
-                <li><strong>Three.js & WebGL Shaders:</strong> Scene graph management with damped orbital camera kinematics, normalized bump-mapping, dynamic atmospheric scattering, and instanced particle systems.</li>
-                <li><strong>Hardware-Accelerated CSS Glassmorphism:</strong> GPU-composited <code>backdrop-filter</code> blurs, squircle radius containers, and dynamic gradient legends adapting to active weather layers.</li>
-                <li><strong>Automated CI/CD Pipeline:</strong> Versioned on GitHub and deployed directly via Vercel Edge Network for low-latency worldwide delivery.</li>
+                <li><strong>Three.js & Custom WebGL Shaders:</strong> Orbital camera controls with momentum damping, normalized elevation bump mapping, atmospheric Fresnel rim lighting, and GPU-instanced particle flows.</li>
+                <li><strong>High-Performance CSS Glassmorphism:</strong> GPU-accelerated background blurs (<code>backdrop-filter</code>), proportional squircles, and dynamic color-coded temperature legends.</li>
+                <li><strong>Automated CI/CD Pipeline:</strong> Continuous deployment via Vercel Edge Network connected directly to GitHub with global edge caching.</li>
               </ul>
             `
           },
           {
             number: '04',
-            title: 'Impact & Results',
+            title: 'Impact & Takeaways',
             content: `
               <p class="case-paragraph">
-                <strong>Windy 3D</strong> serves as tangible proof of my capability as a <strong>Creative Technologist</strong> to bridge high-craft visual aesthetics and advanced front-end engineering. Live, public, and production-tested.
+                <strong>Windy 3D</strong> serves as a tangible benchmark of my capabilities as a <strong>Creative Technologist</strong> operating at the convergence of visual design refinement and advanced front-end engineering. The application is live and publicly accessible.
               </p>
             `
           }
@@ -398,64 +396,60 @@
       'post-na-mao': {
         id: 'post-na-mao',
         tag: 'Google AI Studio • GenAI • Vibecoding',
-        title: 'Post Na Mão — AI-Powered Real Estate Webapp',
-        headline: 'Eliminating creation friction for real estate brokers with tailored layouts, luxury templates, and real-time AI copywriting.',
+        title: 'Post Na Mão — AI Real Estate Webapp',
+        headline: 'Eliminating marketing friction for real estate brokers with tailored editorial design, luxury templates, and instant AI copywriting.',
         meta: [
           { label: 'Role', value: 'Creative Technologist & AI Prototyper' },
           { label: 'Tools', value: 'Google AI Studio, LLMs, UI Design' },
           { label: 'Status', value: 'Functional Prototype' },
-          { label: 'Approach', value: 'Vibecoding & Mobile-First' }
+          { label: 'Methodology', value: 'Vibecoding & Mobile-First' }
         ],
         liveUrl: 'http://postnamao.com.br',
-        liveButtonText: 'Visit Post Na Mão Live',
+        liveButtonText: 'Launch Post Na Mão Live',
         sections: [
           {
             number: '01',
             title: 'The Problem: The "Supermarket Flyer" Syndrome',
             content: `
               <p class="case-paragraph">
-                In real estate, speed to market is paramount. Brokers scout properties in the field, but encounter daily operational friction when creating marketing assets for social media:
+                In the competitive real estate market, agility is paramount. Agents scout premium properties and penthouses in the field, but face a daily roadblock when creating social media announcements:
               </p>
               <ul class="case-list">
-                <li><strong>Steep Learning Curves:</strong> Brokers lack the graphic design expertise to navigate complex desktop tools like Photoshop or cluttered Canva templates on smartphones.</li>
-                <li><strong>Visual Pollution:</strong> The outcome frequently swings between raw photos lacking essential specs or loud graphics filled with flashing price tags that make premium penthouses look like clearance flyers.</li>
-                <li><strong>Timing Friction:</strong> Photos are captured instantly on mobile, but publishing gets delayed for days, losing buyer momentum.</li>
+                <li><strong>Steep Learning Curves:</strong> Brokers do not have the time nor the graphic training to operate heavy software like Photoshop or clunky mobile Canva templates.</li>
+                <li><strong>Severe Aesthetic Degradation:</strong> Results often end up looking like cheap grocery flyers with loud fonts, neon badges, and chaotic alignments that devalue luxury real estate.</li>
+                <li><strong>Lost Momentum:</strong> Photos taken on smartphones take hours or days to be packaged into marketing pieces, missing the critical window of engagement.</li>
               </ul>
             `
           },
           {
             number: '02',
-            title: 'UX Intuition & The Vibecoding Workflow',
+            title: 'UX Vision & The Vibecoding Workflow',
             content: `
               <p class="case-paragraph">
-                Understanding broker routines and possessing strong user experience intuition, I realized the solution was not giving users "more complex editor buttons", but rather <strong>eliminating unnecessary decisions and delivering finished, editorial-grade creative in a single tap</strong>.
+                Leveraging deep product intuition, I realized the solution was not to give users "more editing tools", but rather to <strong>eliminate unnecessary decisions and deliver high-craft results in a single tap</strong>.
               </p>
               <p class="case-paragraph">
-                Instead of spending months on static mockups, I embraced <strong>Vibecoding with Google AI Studio</strong>. I translated product intuition directly into structured prompts and functional UI logic, iterating with frontier LLMs in record time. The premise: <em>the broker types 3 specs and the tailored graphic generates immediately</em>.
+                Instead of losing months to static specifications, I adopted a <strong>Vibecoding methodology with Google AI Studio</strong>. I channeled design vision directly into structured architecture prompts, rapidly co-authoring the code with LLMs. The premise: <em>the broker fills 3 inputs and the graphic appears instantly</em>.
               </p>
             `
           },
           {
             number: '03',
-            title: 'The Solution: Real-Time Design + Generative AI',
+            title: 'The Solution: Real-Time Design Engine + Generative AI',
             content: `
-              <p class="case-paragraph">
-                <strong>Post Na Mão</strong> was built mobile-first to operate smoothly whether a broker is parked in their car or sitting at their office desk:
-              </p>
               <ul class="case-list">
-                <li><strong>Instant Reactive Canvas:</strong> Any entered spec (price, rooms, square footage, neighborhood) formats and renders in real time over property photography with editorial typography and luxury margins.</li>
-                <li><strong>5 Built-in Luxury Templates:</strong> Pre-calibrated layouts adhering to high-end real estate aesthetics with zero manual measuring needed.</li>
-                <li><strong>Generative AI Copywriter:</strong> Eliminates creative burnout. The AI consumes property attributes and writes engaging, persuasive Instagram captions formatted with relevant market hashtags.</li>
-                <li><strong>Zero-Friction Publishing Flow:</strong> Direct high-resolution export to the mobile camera roll or instant 1-tap share to the Instagram app.</li>
+                <li><strong>Instant Dynamic Canvas:</strong> As the agent types building details, address, square footage, and amenities, clean editorial graphics render live on screen.</li>
+                <li><strong>5 Built-in Luxury Architectural Presets:</strong> Pre-calibrated typography scales, safe margins, and layout balances that make every export look like a high-end architectural magazine spread.</li>
+                <li><strong>Built-in AI Copywriter:</strong> Generative models craft conversion-optimized Instagram captions with curated hashtags and engaging property descriptions.</li>
               </ul>
             `
           },
           {
             number: '04',
-            title: 'Impact & Results',
+            title: 'Impact & Takeaways',
             content: `
               <p class="case-paragraph">
-                <strong>Post Na Mão</strong> proves the capability to identify real business friction (B2B/B2C) and rapidly ship an end-to-end digital product leveraging generative AI strategically, pragmatically, and with product craft.
+                <strong>Post Na Mão</strong> embodies the transformative speed of vibecoding: turning product intuition into working software at lightning speed without sacrificing visual craft. Live at <a href="http://postnamao.com.br" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">postnamao.com.br</a>.
               </p>
             `
           }
@@ -465,7 +459,54 @@
   };
 
   // =========================================================================
-  // 3. Ambient Particles & Fluid Background Canvas (Retina & Accessible)
+  // 3. Internationalization Engine (PT Default strictly preserved)
+  // =========================================================================
+  function setLanguage(lang) {
+    if (!TRANSLATIONS[lang]) return;
+    currentLang = lang;
+
+    // Update document HTML lang attribute
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+    // Update Language Toggle Pill state
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+      const isTarget = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', isTarget);
+      btn.setAttribute('aria-pressed', isTarget ? 'true' : 'false');
+    });
+
+    // Translate all elements with data-i18n
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const text = TRANSLATIONS[lang][key];
+      if (text !== undefined) {
+        el.innerHTML = text;
+      }
+    });
+
+    // If modal is currently open, re-render it in the new language seamlessly
+    if (currentOpenCaseId) {
+      renderCaseStudyContent(currentOpenCaseId);
+    }
+  }
+
+  function initLanguageSwitch() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const selectedLang = btn.getAttribute('data-lang');
+        if (selectedLang && selectedLang !== currentLang) {
+          setLanguage(selectedLang);
+        }
+      });
+    });
+  }
+
+  // =========================================================================
+  // 4. Dot-Matrix Spotlight Canvas (21st.dev & Sci-Fi Precision)
   // =========================================================================
   function initAmbientCanvas() {
     const canvas = document.getElementById('ambient-canvas');
@@ -478,10 +519,10 @@
 
     let mouseX = width / 2;
     let mouseY = height / 2;
-    let targetMouseX = mouseX;
-    let targetMouseY = mouseY;
-    let hasUserMovedMouse = false;
-    let autoOscillation = 0;
+    let smoothMouseX = mouseX;
+    let smoothMouseY = mouseY;
+    let isMouseOver = false;
+    let autoAngle = 0;
     let animId = null;
 
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -499,673 +540,342 @@
 
     resize();
 
-    const particles = [];
-    const isMobile = width < 768;
-    const particleCount = isMobile ? 24 : 45;
+    window.addEventListener('resize', () => {
+      resize();
+    });
 
-    const palette = ['#38bdf8', '#818cf8', '#a855f7', '#34d399'];
+    window.addEventListener('pointermove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      isMouseOver = true;
+    });
 
-    class Particle {
-      constructor() {
-        this.reset();
-      }
+    window.addEventListener('pointerleave', () => {
+      isMouseOver = false;
+    });
 
-      reset() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.45;
-        this.vy = (Math.random() - 0.5) * 0.45;
-        this.size = Math.random() * 2 + 1;
-        this.color = palette[Math.floor(Math.random() * palette.length)];
-        this.alpha = Math.random() * 0.45 + 0.15;
-        this.originX = this.x;
-        this.originY = this.y;
-      }
-
-      update(parallaxX, parallaxY) {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
-
-        this.renderX = this.x + parallaxX * (this.size * 5);
-        this.renderY = this.y + parallaxY * (this.size * 5);
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.renderX, this.renderY, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = this.alpha;
-        ctx.fill();
-      }
-    }
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    window.addEventListener(
-      'mousemove',
-      (e) => {
-        hasUserMovedMouse = true;
-        targetMouseX = e.clientX;
-        targetMouseY = e.clientY;
-      },
-      { passive: true }
-    );
-
-    window.addEventListener(
-      'resize',
-      () => {
-        resize();
-      },
-      { passive: true }
-    );
-
-    function animate() {
-      if (motionQuery.matches) {
-        ctx.clearRect(0, 0, width, height);
-        return;
-      }
-
-      if (!hasUserMovedMouse) {
-        autoOscillation += 0.015;
-        targetMouseX = width / 2 + Math.sin(autoOscillation) * (width * 0.15);
-        targetMouseY = height / 2 + Math.cos(autoOscillation * 0.7) * (height * 0.1);
-      }
-
-      mouseX += (targetMouseX - mouseX) * 0.04;
-      mouseY += (targetMouseY - mouseY) * 0.04;
-
-      const parallaxFactorX = (mouseX - width / 2) / width;
-      const parallaxFactorY = (mouseY - height / 2) / height;
-
+    function draw() {
       ctx.clearRect(0, 0, width, height);
 
-      for (let i = 0; i < particles.length; i++) {
-        const p1 = particles[i];
-        p1.update(parallaxFactorX, parallaxFactorY);
-        p1.draw();
+      // Smooth lerp mouse tracking
+      if (!isMouseOver) {
+        autoAngle += 0.012;
+        mouseX = width / 2 + Math.cos(autoAngle) * (width * 0.28);
+        mouseY = height / 2 + Math.sin(autoAngle * 1.5) * (height * 0.22);
+      }
 
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p1.renderX - p2.renderX;
-          const dy = p1.renderY - p2.renderY;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+      smoothMouseX += (mouseX - smoothMouseX) * 0.1;
+      smoothMouseY += (mouseY - smoothMouseY) * 0.1;
 
-          if (dist < 100) {
-            ctx.beginPath();
-            ctx.moveTo(p1.renderX, p1.renderY);
-            ctx.lineTo(p2.renderX, p2.renderY);
-            ctx.strokeStyle = '#38bdf8';
-            ctx.globalAlpha = (1 - dist / 100) * 0.1;
-            ctx.lineWidth = 0.75;
-            ctx.stroke();
+      const gridStep = width < 768 ? 34 : 28;
+      const spotlightRadius = width < 768 ? 170 : 230;
+      const spotlightRadiusSq = spotlightRadius * spotlightRadius;
+
+      const cols = Math.ceil(width / gridStep);
+      const rows = Math.ceil(height / gridStep);
+
+      for (let r = 0; r <= rows; r++) {
+        const y = r * gridStep;
+        for (let c = 0; c <= cols; c++) {
+          const x = c * gridStep;
+
+          const dx = x - smoothMouseX;
+          const dy = y - smoothMouseY;
+          const distSq = dx * dx + dy * dy;
+
+          let radius = 0.85;
+          let alpha = 0.055;
+          let rVal = 255;
+          let gVal = 255;
+          let bVal = 255;
+
+          if (distSq < spotlightRadiusSq) {
+            const factor = 1 - Math.sqrt(distSq) / spotlightRadius;
+            const easeFactor = factor * factor; // Quadratic falloff
+
+            radius = 0.85 + easeFactor * 1.35;
+            alpha = 0.055 + easeFactor * 0.65;
+
+            // Shift from white to electric cyan/sapphire glow near cursor
+            rVal = Math.round(255 - easeFactor * 199); // 56
+            gVal = Math.round(255 - easeFactor * 66);  // 189
+            bVal = Math.round(255 - easeFactor * 7);   // 248
           }
+
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${rVal}, ${gVal}, ${bVal}, ${alpha})`;
+          ctx.fill();
         }
       }
 
-      ctx.globalAlpha = 1;
-      animId = requestAnimationFrame(animate);
+      if (!motionQuery.matches) {
+        animId = requestAnimationFrame(draw);
+      }
     }
 
-    animate();
-
-    motionQuery.addEventListener('change', (e) => {
-      if (e.matches) {
-        if (animId) cancelAnimationFrame(animId);
-        ctx.clearRect(0, 0, width, height);
-      } else {
-        animate();
-      }
-    });
+    if (!motionQuery.matches) {
+      animId = requestAnimationFrame(draw);
+    } else {
+      draw();
+    }
   }
 
   // =========================================================================
-  // 4. 3D Perspective Tilt & Specular Glare (Apple Glass Effect)
+  // 5. Dynamic Card Spotlight Cursor Interaction
   // =========================================================================
-  function initCardParallax() {
-    const hasHoverCapability = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (!hasHoverCapability) return;
-
-    const cards = document.querySelectorAll('[data-tilt="true"]');
-
-    cards.forEach((card) => {
-      let isHovered = false;
-      let rafId = null;
-
-      card.addEventListener('mouseenter', () => {
-        isHovered = true;
-        card.style.transition = 'transform 120ms cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 250ms ease';
+  function initCardSpotlights() {
+    const cards = document.querySelectorAll('.spotlight-card, .project-card, .bento-card, .telemetry-pod');
+    cards.forEach(card => {
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
       });
 
-      card.addEventListener(
-        'mousemove',
-        (e) => {
-          if (!isHovered) return;
-
-          if (rafId) cancelAnimationFrame(rafId);
-          rafId = requestAnimationFrame(() => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * -4.5;
-            const rotateY = ((x - centerX) / centerX) * 4.5;
-
-            card.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
-            card.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
-            card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
-          });
-        },
-        { passive: true }
-      );
-
-      card.addEventListener('mouseleave', () => {
-        isHovered = false;
-        if (rafId) cancelAnimationFrame(rafId);
-        card.style.transition = 'transform 500ms var(--spring-snappy), box-shadow 500ms ease';
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      card.addEventListener('pointerleave', () => {
+        card.style.setProperty('--mouse-x', `-999px`);
+        card.style.setProperty('--mouse-y', `-999px`);
       });
     });
   }
 
   // =========================================================================
-  // 5. Apple-Style Case Study Sheet / Modal Engine (Bilingual)
+  // 6. Live Santos / UTC-3 Telemetry Clock
+  // =========================================================================
+  function initLiveClock() {
+    const clockEl = document.getElementById('live-santos-clock');
+    if (!clockEl) return;
+
+    function update() {
+      const now = new Date();
+      // Calculate UTC-3 (Santos, SP)
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const santosTime = new Date(utc - (3600000 * 3));
+      
+      const h = String(santosTime.getHours()).padStart(2, '0');
+      const m = String(santosTime.getMinutes()).padStart(2, '0');
+      const s = String(santosTime.getSeconds()).padStart(2, '0');
+      clockEl.textContent = `${h}:${m}:${s} UTC-3`;
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+
+  // =========================================================================
+  // 7. Case Study HUD Modal Sheet System
   // =========================================================================
   const modalBackdrop = document.getElementById('case-modal-backdrop');
   const modalSheet = document.getElementById('case-modal-sheet');
+  const modalContent = document.getElementById('case-modal-content');
   const modalCloseBtn = document.getElementById('btn-close-modal');
-  const modalBody = document.getElementById('case-modal-content');
   const modalLiveLink = document.getElementById('modal-live-link');
-  let previouslyFocusedElement = null;
+  const modalLiveText = document.getElementById('modal-live-text');
 
-  function setTriggersExpanded(studyId, isExpanded) {
-    document.querySelectorAll(`[data-open-case="${studyId}"]`).forEach((btn) => {
-      btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-    });
-  }
+  function renderCaseStudyContent(caseId) {
+    const langData = CASE_STUDIES[currentLang] || CASE_STUDIES.pt;
+    const caseData = langData[caseId];
+    if (!caseData) return;
 
-  function openCaseStudy(studyId, pushHistory = true) {
-    const studiesForLang = CASE_STUDIES[currentLang] || CASE_STUDIES.pt;
-    const study = studiesForLang[studyId] || CASE_STUDIES.pt[studyId];
-    if (!study || !modalBackdrop || !modalBody) return;
+    currentOpenCaseId = caseId;
 
-    currentOpenCaseId = studyId;
-    previouslyFocusedElement = document.activeElement;
-
-    // Build metadata rows
-    const metaHtml = study.meta
-      .map(
-        (m) => `
-      <div class="case-meta-item">
-        <div class="case-meta-label">${m.label}</div>
-        <div class="case-meta-value">${m.value}</div>
-      </div>
-    `
-      )
-      .join('');
-
-    const sectionsHtml = study.sections
-      .map(
-        (sec) => `
-      <section class="case-section">
-        <h3 class="case-section-title">
-          <span class="number-badge">${sec.number}</span>
-          <span>${sec.title}</span>
-        </h3>
-        ${sec.content}
-      </section>
-    `
-      )
-      .join('');
-
-    modalBody.innerHTML = `
+    // Render Hero & Metadata
+    let html = `
       <div class="case-study-hero">
-        <span class="case-study-tag">${study.tag}</span>
-        <h2 class="case-study-title">${study.title}</h2>
-        <p class="case-paragraph" style="font-size: 1.15rem; color: #cbd5e1; font-weight: 500;">
-          ${study.headline}
-        </p>
+        <span class="case-study-tag">${caseData.tag}</span>
+        <h2 class="case-study-title">${caseData.title}</h2>
+        <p class="case-study-headline">${caseData.headline}</p>
       </div>
 
-      <div class="case-study-meta-grid">
-        ${metaHtml}
-      </div>
-
-      <div class="case-study-narrative">
-        ${sectionsHtml}
+      <div class="case-meta-grid">
+        ${caseData.meta.map(m => `
+          <div class="case-meta-item">
+            <span class="case-meta-label">${m.label}</span>
+            <span class="case-meta-value">${m.value}</span>
+          </div>
+        `).join('')}
       </div>
     `;
 
-    // Ensure links inside case study open safely
-    modalBody.querySelectorAll('a').forEach((a) => {
-      a.setAttribute('target', '_blank');
-      a.setAttribute('rel', 'noopener noreferrer');
+    // Render Detailed Narrative Sections
+    caseData.sections.forEach(sec => {
+      html += `
+        <div class="case-section-block">
+          <h3 class="case-section-title">
+            <span class="case-section-num">// ${sec.number}</span>
+            <span>${sec.title}</span>
+          </h3>
+          ${sec.content}
+        </div>
+      `;
     });
 
-    // Update bottom primary CTA
+    modalContent.innerHTML = html;
+
+    // Update Sticky Modal Action Button
     if (modalLiveLink) {
-      modalLiveLink.href = study.liveUrl;
-      const liveBtnLabel = study.liveButtonText || (currentLang === 'en' ? 'Launch Live App' : 'Abrir Projeto no Ar');
-      modalLiveLink.innerHTML = `<span>${liveBtnLabel}</span> <span aria-hidden="true">↗</span>`;
+      modalLiveLink.href = caseData.liveUrl;
     }
+    if (modalLiveText) {
+      modalLiveText.textContent = caseData.liveButtonText;
+    }
+  }
 
-    // Lock body scroll with scrollbar compensation
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.setProperty('--scrollbar-offset', `${scrollbarWidth}px`);
-    document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
+  function openModal(caseId) {
+    if (!modalBackdrop) return;
+    renderCaseStudyContent(caseId);
 
-    modalBackdrop.classList.add('is-open');
+    modalBackdrop.classList.add('open');
     modalBackdrop.setAttribute('aria-hidden', 'false');
-    setTriggersExpanded(studyId, true);
+    document.body.style.overflow = 'hidden';
 
-    // Focus close button for keyboard users
+    // Focus close button for accessibility
     setTimeout(() => {
       if (modalCloseBtn) modalCloseBtn.focus();
     }, 100);
-
-    // Update URL hash for shareable deep link
-    if (pushHistory && history.pushState) {
-      history.pushState({ modalOpen: true, studyId }, '', `#case-${studyId}`);
-    }
   }
 
-  function closeCaseStudy(syncHistory = true) {
-    if (!modalBackdrop || !modalBackdrop.classList.contains('is-open')) return;
-
-    const closedId = currentOpenCaseId;
-    currentOpenCaseId = null;
-
-    modalBackdrop.classList.remove('is-open');
-    modalBackdrop.setAttribute('aria-hidden', 'true');
-
-    if (modalSheet) {
-      modalSheet.classList.remove('is-dragging');
-      modalSheet.style.transform = '';
-      modalSheet.style.transition = '';
-    }
-
-    // Restore body scroll and clear layout offset
-    document.body.style.overflow = '';
-    document.body.style.paddingRight = '';
-    document.documentElement.style.setProperty('--scrollbar-offset', '0px');
-
-    if (closedId) {
-      setTriggersExpanded(closedId, false);
-    }
-
-    // Restore previous focus
-    if (previouslyFocusedElement) {
-      previouslyFocusedElement.focus();
-    }
-
-    // Sync history state
-    if (syncHistory) {
-      if (history.state && history.state.modalOpen) {
-        history.back();
-      } else if (window.location.hash.startsWith('#case-')) {
-        if (history.replaceState) {
-          history.replaceState(null, '', window.location.pathname + window.location.search);
-        } else {
-          window.location.hash = '';
-        }
-      }
-    }
-  }
-
-  function initCaseModal() {
+  function closeModal() {
     if (!modalBackdrop) return;
+    modalBackdrop.classList.remove('open');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    currentOpenCaseId = null;
+  }
 
-    // Trigger buttons and preview wraps
-    document.querySelectorAll('[data-open-case]').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
+  function initModalListeners() {
+    // Trigger buttons
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-open-case]');
+      if (trigger) {
         e.preventDefault();
-        const id = btn.getAttribute('data-open-case');
-        openCaseStudy(id, true);
-      });
+        const caseId = trigger.getAttribute('data-open-case');
+        openModal(caseId);
+      }
 
-      btn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          const id = btn.getAttribute('data-open-case');
-          openCaseStudy(id, true);
-        }
-      });
+      // Close triggers
+      if (e.target.closest('[data-close-modal]') || e.target === modalBackdrop) {
+        closeModal();
+      }
     });
 
-    // Close button
     if (modalCloseBtn) {
-      modalCloseBtn.addEventListener('click', () => closeCaseStudy(true));
+      modalCloseBtn.addEventListener('click', closeModal);
     }
 
-    // Elements with data-close-modal
-    document.querySelectorAll('[data-close-modal="true"]').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeCaseStudy(true);
-      });
-    });
-
-    // Click outside modal sheet to close
-    modalBackdrop.addEventListener('click', (e) => {
-      if (e.target === modalBackdrop) {
-        closeCaseStudy(true);
-      }
-    });
-
-    // Keyboard ESC & Focus Trap
+    // Keyboard ESC to close
     window.addEventListener('keydown', (e) => {
-      if (!modalBackdrop.classList.contains('is-open')) return;
-
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeCaseStudy(true);
-        return;
-      }
-
-      // Accessible Focus Trap inside modal dialog
-      if (e.key === 'Tab') {
-        const focusableElements = modalSheet.querySelectorAll(
-          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
-        );
-
-        if (focusableElements.length === 0) return;
-
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
-
-        if (e.shiftKey) {
-          if (document.activeElement === firstElement || document.activeElement === modalSheet) {
-            e.preventDefault();
-            lastElement.focus();
-          }
-        } else {
-          if (document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
-          }
-        }
+      if (e.key === 'Escape' && modalBackdrop && modalBackdrop.classList.contains('open')) {
+        closeModal();
       }
     });
-
-    // History popstate listener
-    window.addEventListener('popstate', (e) => {
-      if (e.state && e.state.modalOpen && e.state.studyId) {
-        openCaseStudy(e.state.studyId, false);
-      } else {
-        if (modalBackdrop.classList.contains('is-open')) {
-          closeCaseStudy(false);
-        }
-      }
-    });
-
-    // Touch swipe-down to dismiss on mobile iOS sheet
-    if (modalSheet) {
-      let touchStartY = 0;
-      let touchStartX = 0;
-      let currentTouchDiffY = 0;
-      let isDraggingSheet = false;
-      let hasDeterminedDirection = false;
-      let isVerticalDrag = false;
-
-      const handleArea = modalSheet.querySelector('.sheet-drag-handle') || modalSheet.querySelector('.modal-header');
-
-      modalSheet.addEventListener(
-        'touchstart',
-        (e) => {
-          if (e.touches.length !== 1) return;
-          const touch = e.touches[0];
-          touchStartY = touch.clientY;
-          touchStartX = touch.clientX;
-          currentTouchDiffY = 0;
-          hasDeterminedDirection = false;
-          isVerticalDrag = false;
-
-          const isOverHandle = handleArea && handleArea.contains(e.target);
-          const isAtTop = modalSheet.scrollTop <= 1;
-
-          if (isOverHandle || isAtTop) {
-            isDraggingSheet = true;
-          } else {
-            isDraggingSheet = false;
-          }
-        },
-        { passive: true }
-      );
-
-      modalSheet.addEventListener(
-        'touchmove',
-        (e) => {
-          if (!isDraggingSheet) return;
-          const touch = e.touches[0];
-          const diffX = Math.abs(touch.clientX - touchStartX);
-          const diffY = touch.clientY - touchStartY;
-
-          if (!hasDeterminedDirection) {
-            if (diffX > 10 && diffX > Math.abs(diffY)) {
-              isDraggingSheet = false;
-              return;
-            }
-            if (diffY > 8) {
-              hasDeterminedDirection = true;
-              isVerticalDrag = true;
-              modalSheet.classList.add('is-dragging');
-            }
-          }
-
-          if (isVerticalDrag) {
-            currentTouchDiffY = Math.max(0, diffY);
-            const dampedY = Math.pow(currentTouchDiffY, 0.92);
-            modalSheet.style.transform = `translateY(${dampedY}px)`;
-          }
-        },
-        { passive: true }
-      );
-
-      const finishDrag = () => {
-        if (!isDraggingSheet && !isVerticalDrag) return;
-
-        isDraggingSheet = false;
-        modalSheet.classList.remove('is-dragging');
-
-        if (currentTouchDiffY > 85) {
-          modalSheet.style.transition = 'transform 260ms cubic-bezier(0.32, 0.72, 0, 1)';
-          modalSheet.style.transform = 'translateY(100%)';
-          setTimeout(() => {
-            closeCaseStudy(true);
-            modalSheet.style.transform = '';
-            modalSheet.style.transition = '';
-          }, 260);
-        } else {
-          modalSheet.style.transition = 'transform 320ms var(--spring-snappy)';
-          modalSheet.style.transform = 'translateY(0px)';
-          setTimeout(() => {
-            modalSheet.style.transform = '';
-            modalSheet.style.transition = '';
-          }, 320);
-        }
-
-        currentTouchDiffY = 0;
-        isVerticalDrag = false;
-        hasDeterminedDirection = false;
-      };
-
-      modalSheet.addEventListener('touchend', finishDrag, { passive: true });
-      modalSheet.addEventListener('touchcancel', finishDrag, { passive: true });
-    }
-
-    // Check on page load for deep-link hash (e.g. #case-windy-3d)
-    const hash = window.location.hash.replace('#case-', '');
-    if (CASE_STUDIES.pt[hash] || (CASE_STUDIES.en && CASE_STUDIES.en[hash])) {
-      setTimeout(() => openCaseStudy(hash, false), 350);
-    }
   }
 
   // =========================================================================
-  // 6. Language Switcher Engine
-  // =========================================================================
-  function setLanguage(lang) {
-    if (lang !== 'pt' && lang !== 'en') return;
-    currentLang = lang;
-
-    // Update document HTML lang attribute
-    document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
-
-    // Update button states
-    document.querySelectorAll('.lang-btn').forEach((btn) => {
-      const isTarget = btn.getAttribute('data-lang') === lang;
-      btn.classList.toggle('active', isTarget);
-      btn.setAttribute('aria-pressed', isTarget ? 'true' : 'false');
-    });
-
-    // Update all text nodes marked with data-i18n
-    const dict = TRANSLATIONS[lang] || TRANSLATIONS.pt;
-    document.querySelectorAll('[data-i18n]').forEach((el) => {
-      const key = el.getAttribute('data-i18n');
-      if (dict[key] !== undefined) {
-        el.innerHTML = dict[key];
-      }
-    });
-
-    // If modal is currently open, seamlessly re-render it in the new language
-    if (currentOpenCaseId && modalBackdrop && modalBackdrop.classList.contains('is-open')) {
-      openCaseStudy(currentOpenCaseId, false);
-    }
-  }
-
-  function initLanguageSwitch() {
-    document.querySelectorAll('.lang-btn').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const selectedLang = btn.getAttribute('data-lang');
-        setLanguage(selectedLang);
-      });
-    });
-
-    // Default is ALWAYS Portuguese on open, as requested
-    setLanguage('pt');
-  }
-
-  // =========================================================================
-  // 7. Apple-Style Haptic Toast Notification & Copy Engine
+  // 8. Apple-Style Haptic Toast Notification
   // =========================================================================
   const toast = document.getElementById('toast-notification');
-  const toastMessage = document.getElementById('toast-message');
-  let toastTimeout = null;
+  const toastMsg = document.getElementById('toast-message');
+  let toastTimer = null;
 
-  function showToast(message, duration = 3000) {
-    if (!toast) return;
+  function showToast(message) {
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = message;
+    toast.classList.add('show');
 
-    if (toastMessage) {
-      toastMessage.textContent = message;
-    }
-
-    toast.classList.add('is-visible');
-
-    if (toastTimeout) clearTimeout(toastTimeout);
-
-    toastTimeout = setTimeout(() => {
-      toast.classList.remove('is-visible');
-    }, duration);
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2800);
   }
 
-  function initClipboardActions() {
-    document.querySelectorAll('[data-copy]').forEach((btn) => {
-      btn.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const textToCopy = btn.getAttribute('data-copy');
-        const feedbackMsg =
-          currentLang === 'en'
-            ? btn.getAttribute('data-toast-en') || 'Copied to clipboard: ' + textToCopy
-            : btn.getAttribute('data-toast') || 'Copiado para a área de transferência: ' + textToCopy;
+  function initCopyButtons() {
+    document.addEventListener('click', async (e) => {
+      const copyBtn = e.target.closest('[data-copy]');
+      if (!copyBtn) return;
 
-        try {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            await navigator.clipboard.writeText(textToCopy);
-          } else {
-            const textArea = document.createElement('textarea');
-            textArea.value = textToCopy;
-            textArea.style.position = 'fixed';
-            textArea.style.opacity = '0';
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-          }
-          showToast(`✓ ${feedbackMsg}`);
-        } catch (err) {
-          showToast(`Contato / Contact: ${textToCopy}`);
-        }
-      });
+      const textToCopy = copyBtn.getAttribute('data-copy');
+      const toastTextPt = copyBtn.getAttribute('data-toast') || 'Copiado!';
+      const toastTextEn = copyBtn.getAttribute('data-toast-en') || 'Copied!';
+      const toastText = currentLang === 'en' ? toastTextEn : toastTextPt;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        showToast(toastText);
+      } catch (err) {
+        // Fallback for non-secure contexts
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showToast(toastText);
+      }
     });
   }
 
   // =========================================================================
-  // 8. Smooth Scroll Reveal (Intersection Observer)
+  // 9. Intersection Observer for Scroll Reveals
   // =========================================================================
   function initScrollReveal() {
-    const elements = document.querySelectorAll('.reveal-on-scroll');
-    if (!elements.length) return;
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    if (!('IntersectionObserver' in window)) {
+      revealElements.forEach(el => el.classList.add('is-revealed'));
+      return;
+    }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
-      }
-    );
-
-    elements.forEach((el) => observer.observe(el));
-  }
-
-  // =========================================================================
-  // 9. Dynamic Navigation Dock Elevation on Scroll
-  // =========================================================================
-  function initNavScroll() {
-    const navIsland = document.querySelector('.nav-island');
-    if (!navIsland) return;
-
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (window.scrollY > 40) {
-          navIsland.style.background = 'rgba(10, 14, 24, 0.9)';
-          navIsland.style.boxShadow = '0 16px 36px -8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.2)';
-        } else {
-          navIsland.style.background = 'rgba(12, 17, 28, 0.78)';
-          navIsland.style.boxShadow = '0 12px 32px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          obs.unobserve(entry.target);
         }
-      },
-      { passive: true }
-    );
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
   }
 
   // =========================================================================
-  // Initialization Lifecycle
+  // 10. Initialization Orchestrator
   // =========================================================================
-  document.addEventListener('DOMContentLoaded', () => {
-    initAmbientCanvas();
-    initCardParallax();
-    initCaseModal();
+  function init() {
+    // 1. Initialize strictly in Portuguese
+    setLanguage('pt');
+
+    // 2. Setup Language Switch listener
     initLanguageSwitch();
-    initClipboardActions();
+
+    // 3. Start Ambient Dot-Matrix Canvas
+    initAmbientCanvas();
+
+    // 4. Setup Dynamic Card Spotlights
+    initCardSpotlights();
+
+    // 5. Start Live Santos UTC-3 Clock
+    initLiveClock();
+
+    // 6. Setup Case Study Modal
+    initModalListeners();
+
+    // 7. Setup Toast & Copy Buttons
+    initCopyButtons();
+
+    // 8. Start Scroll Reveal Observer
     initScrollReveal();
-    initNavScroll();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
 })();
